@@ -1,11 +1,18 @@
 #include<stdio.h>
 
 int main(){
-    int sortedA[] = {1,2,3,4,5,6,7,8,9};
+    int sortedA[] = {1,2,3,4,5,6,7,8,2};
     int n = sizeof(sortedA)/sizeof(sortedA[0]);
     int target;
     int lb = 0, ub = n - 1;
     int found = 0;
+    for(int i = 0; i < n-1; i++){
+        if (sortedA[i]>sortedA[i+1])
+        {
+            printf("Array is not sorted!!");
+            return 0;
+        }
+    }
     printf("Enter data to be found 1-9: ");
     scanf("%d",&target);
     while(lb <= ub){
