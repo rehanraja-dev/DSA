@@ -3,20 +3,22 @@
 int main(){
     int sortedA[] = {1,2,3,4,5,6,7,8,9};
     int n = sizeof(sortedA)/sizeof(sortedA[0]);
-    int target = 9;
-    int left = 0, right = n - 1;
+    int target;
+    int lb = 0, ub = n - 1;
     int found = 0;
-    while(left <= right){
-        int mid = (left + right) / 2;
+    printf("Enter data to be found 1-9: ");
+    scanf("%d",&target);
+    while(lb <= ub){
+        int mid = (lb + ub) / 2;
         if(sortedA[mid] == target){
             found = 1;
             break;
         }
         else if(sortedA[mid] < target){
-            left = mid + 1;
+            lb = mid + 1;
         }
         else{
-            right = mid - 1;
+            ub = mid - 1;
         }
     }
     if(found){
